@@ -1,0 +1,659 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ram Raman Creative Portfolio</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Shrikhand&family=Pinyon+Script&family=Bodoni+Moda:ital,opsz,wght@0,6..96,500;0,6..96,700;1,6..96,500&family=Anton&family=Archivo:wdth,wght@100..125,400..900&family=Courier+Prime:wght@400;700&family=Reenie+Beanie&display=swap">
+<style>
+/* Layout: Ram Raman's portfolio, built section by section from his five references, re-cut as a brown vox-pop zine
+   (street-interview mic flags, lower-third name bars, speech bubbles) on Raman's 1 Nov note:
+   manila-folder cover (ref 3) · "Hi, since you're new here" bubble-type intro (ref 2) · star-border passport ID (ref 5)
+   · skills & works (ref 2) · WORK/Archive ring binder on red (ref 1) · pink folder slices for the PR box case (ref 4)
+   · envelope wrap-up (ref 2). One printed, paper look, light only, by choice. */
+:root{
+  --paper:#E6DCCB; --sheet:#F4EDE1; --manila:#D9B07A; --manila-dk:#B98D55; --grid:#B98D55;
+  --ink:#1E120E; --muted:#5E4B41; --rule:#CDBDA6;
+  --pink:#A0612A; --pink-soft:#D9B48A; --pink-tab:#CDA57A;   /* caramel family (was pink in the refs) */
+  --red:#6B1E16; --red-deep:#2A0D09;                            /* oxblood */
+  --purple:#2B1812; --purple-soft:#EDE3D6;                      /* espresso (was purple in the passport ref) */
+  --brown:#482922; --olive:#3D3A22;
+  --bubble:'Shrikhand','Cooper Black',Georgia,serif;
+  --script:'Pinyon Script','Snell Roundhand',cursive;
+  --serif:'Bodoni Moda',Didot,Georgia,serif;
+  --heavy:'Anton','Impact','Arial Narrow',sans-serif;
+  --sans:'Archivo','Helvetica Neue',Arial,sans-serif;
+  --type:'Courier Prime','Courier New',monospace;
+  --hand:'Reenie Beanie','Bradley Hand',cursive;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.5}
+img{max-width:100%;display:block}
+a{color:var(--red)}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+p{margin:0}
+h1,h2,h3{margin:0;font-weight:400;line-height:1;text-wrap:balance}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.type{font-family:var(--type);font-size:13px;letter-spacing:.02em}
+.hand{font-family:var(--hand);font-size:30px;line-height:1;color:var(--ink)}
+.caps{font-family:var(--sans);font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase}
+section{scroll-margin-top:70px}
+.photo-slot{background:repeating-radial-gradient(circle at 50% 40%,#bdb2a6 0 2px,transparent 2px 6px),#d9d0c4;display:grid;place-items:center;text-align:center;color:#4a3f38;font-family:var(--type);font-size:12px;padding:10px}
+
+/* nav: pink folder tabs with sticker labels (ref 4) */
+.nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:8;background:var(--paper);border-bottom:2px solid var(--pink)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--paper)}
+.nav ul{list-style:none;margin:0;padding:10px 0 0;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.nav ul::-webkit-scrollbar{display:none}
+.nav a{display:flex;align-items:center;min-height:44px;padding:0 16px;background:var(--pink-tab);border-radius:14px 14px 0 0;
+  color:var(--ink);text-decoration:none;white-space:nowrap}
+.nav a span{background:#fff;padding:3px 8px;font-family:var(--type);font-size:12px;box-shadow:0 1px 2px rgba(0,0,0,.15)}
+.nav a:hover,.nav a[aria-current="true"]{background:var(--pink)}
+
+/* 1 · cover: manila folder (ref 3) */
+.cover{padding-block:36px 56px}
+.corner{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.folder-wrap{position:relative;max-width:900px;margin:44px auto 40px}
+.f-sheet{position:absolute;left:4%;right:14%;top:-22px;height:60px;background:#fff;border:1px solid #ddd;
+  background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:9px 9px;
+  transform:rotate(-.6deg)}
+.f-sheet2{position:absolute;left:3%;right:20%;top:-34px;height:40px;background:#fafafa;border:1px solid #ddd;transform:rotate(.8deg)}
+.folder{position:relative;background:var(--manila);border-radius:4px 4px 6px 6px;padding:clamp(70px,11vw,120px) clamp(20px,5vw,60px) clamp(48px,7vw,80px);
+  box-shadow:0 2px 0 var(--manila-dk),0 24px 40px -26px rgba(0,0,0,.5);text-align:center}
+.folder::before{content:"";position:absolute;top:-20px;left:32%;width:22%;height:22px;background:var(--manila);border-radius:10px 10px 0 0}
+.folder::after{content:"";position:absolute;left:0;right:0;bottom:8px;height:4px;border-top:1px solid var(--manila-dk);border-bottom:1px solid var(--manila-dk)}
+.cv-script{font-family:var(--script);font-size:clamp(70px,13vw,150px);line-height:.8;color:var(--ink);display:block}
+.cv-heavy{font-family:var(--sans);font-weight:900;font-stretch:100%;font-size:clamp(46px,10vw,120px);letter-spacing:-.02em;line-height:.9;display:block;margin-top:-4px}
+.cv-name{font-family:var(--sans);font-weight:800;letter-spacing:.02em;font-size:clamp(18px,2.4vw,24px);margin-top:22px}
+.polaroid{position:absolute;right:-10px;top:-46px;width:clamp(120px,20vw,190px);background:#fff;padding:9px 9px 30px;box-shadow:0 10px 20px -10px rgba(0,0,0,.5);transform:rotate(2deg);z-index:2}
+.polaroid .photo-slot{aspect-ratio:1/1.05}
+.clip{position:absolute;top:-22px;right:22px;width:18px;height:52px;border:3px solid #a7a7a7;border-radius:10px;border-bottom-color:transparent}
+
+/* 2 · hello (ref 2 cover slide) */
+.hello{background:#EFE5D4;border:1px solid var(--rule);position:relative;overflow:hidden;padding:clamp(24px,4vw,44px);min-height:520px}
+.hello .hand.a{position:relative;z-index:3;font-size:clamp(34px,4.6vw,54px)}
+.hello .hand.b{position:absolute;right:clamp(16px,4vw,48px);top:clamp(70px,9vw,110px);z-index:3;font-size:clamp(26px,3.2vw,38px)}
+.hello .hand.c{position:absolute;left:clamp(16px,14vw,180px);top:clamp(150px,18vw,200px);z-index:3;font-size:clamp(30px,3.6vw,44px)}
+.bubble{font-family:var(--bubble);color:var(--pink);font-size:clamp(84px,17vw,220px);line-height:.82;letter-spacing:-.01em;position:relative;z-index:1;margin-top:40px}
+.bubble span{display:block}
+.bubble span:last-child{padding-left:12%}
+.cutout{position:absolute;left:52%;transform:translateX(-50%);bottom:0;width:clamp(200px,30vw,340px);height:92%;z-index:2}
+.hello-foot{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;position:relative;z-index:3;margin-top:24px}
+
+/* vox pop: lower thirds, mic flag, speech bubbles */
+.lower{display:inline-flex;align-items:stretch;font-family:var(--heavy);text-transform:uppercase;line-height:1;box-shadow:4px 4px 0 var(--ink)}
+.lower b{background:var(--red);color:#F4EDE1;font-weight:400;padding:8px 12px;font-size:clamp(18px,2.4vw,26px);letter-spacing:.02em}
+.lower span{background:#F4EDE1;color:var(--ink);padding:8px 12px;font-size:clamp(13px,1.6vw,16px);font-family:var(--sans);font-weight:700;letter-spacing:.06em;display:flex;align-items:center}
+.mic{display:inline-flex;align-items:center;gap:8px;font-family:var(--heavy);text-transform:uppercase;font-size:14px;letter-spacing:.06em}
+.mic .flag{background:var(--olive);color:#F4EDE1;padding:6px 10px;border:2px solid var(--ink)}
+.mic svg{width:22px;height:22px}
+.bub{position:relative;background:#FFF9EF;border:2.5px solid var(--ink);border-radius:18px;padding:14px 16px;box-shadow:5px 5px 0 var(--ink);max-width:420px}
+.bub.q{background:var(--pink-soft)}
+.bub::after{content:"";position:absolute;bottom:-14px;left:34px;width:22px;height:22px;background:inherit;border-right:2.5px solid var(--ink);border-bottom:2.5px solid var(--ink);transform:rotate(45deg) skew(10deg,10deg)}
+.bub.r::after{left:auto;right:34px}
+.bub small{display:block;font-family:var(--type);font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--red);margin-bottom:4px}
+.bub p{font-size:16px;line-height:1.4}
+.vox{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,320px) minmax(0,1fr);gap:24px;align-items:center;margin-top:28px}
+.vox .col{display:grid;gap:30px;min-width:0}
+.vox .col.r{justify-items:end}
+.vox img{width:100%}
+.stamp{display:inline-block;border:3px double var(--red);color:var(--red);font-family:var(--heavy);text-transform:uppercase;padding:6px 12px;transform:rotate(-5deg);font-size:18px;letter-spacing:.04em}
+
+/* 3 · ID passport (ref 5) */
+.passport-bg{background:#D8C5AC;background-image:radial-gradient(rgba(0,0,0,.035) 1px,transparent 1px);background-size:4px 4px;padding-block:56px}
+.pp{max-width:560px;margin:0 auto;display:grid;gap:0}
+.pp-card{position:relative;background:#FBF8E9;border:5px solid var(--purple);border-radius:22px;padding:34px}
+.pp-card+ .pp-card{margin-top:-5px}
+.stars{position:absolute;inset:8px;border-radius:14px;pointer-events:none;
+  background:
+   radial-gradient(circle,var(--purple) 0 0) top/0 0;
+}
+.starrow{position:absolute;left:14px;right:14px;display:flex;justify-content:space-between;color:var(--purple);font-size:13px;line-height:1}
+.starrow.t{top:10px}.starrow.b{bottom:10px}
+.starcol{position:absolute;top:14px;bottom:14px;display:flex;flex-direction:column;justify-content:space-between;color:var(--purple);font-size:13px;line-height:1}
+.starcol.l{left:12px}.starcol.r{right:12px}
+.pp-top{display:grid;grid-template-columns:72px 1fr;gap:18px;align-items:center}
+.pp-word{font-family:var(--script);color:var(--purple);font-size:56px;writing-mode:vertical-rl;transform:rotate(180deg);line-height:1;justify-self:center}
+.pp-photo{aspect-ratio:4/3;border:1px solid var(--purple);filter:none}
+.pp-photo{object-fit:cover;width:100%}
+.bigstar{position:absolute;color:var(--purple);font-size:46px;line-height:1}
+.pp-bottom{display:grid;grid-template-columns:150px 1fr;gap:16px}
+.pp-small{aspect-ratio:3/4}
+.pp-small{object-fit:cover;width:100%;border:1px solid var(--purple)}
+.pp-left .pp-script{font-family:var(--script);color:var(--purple);font-size:40px;line-height:1;margin-top:8px}
+.pp-left small{display:block;font-family:var(--type);font-size:9px;color:var(--purple)}
+.fields{display:grid;grid-template-columns:1fr auto;border:1px solid var(--purple);min-width:0}
+.field{border-bottom:1px solid var(--purple);padding:4px 8px 6px;min-width:0}
+.field:nth-child(odd):not(.full){border-right:1px solid var(--purple)}
+.field.full{grid-column:1/-1}
+.field:last-child{border-bottom:0}
+.field label{display:block;font-family:var(--type);font-size:10px;color:var(--purple)}
+.field b{font-family:var(--type);font-weight:400;font-size:13px;letter-spacing:.04em;color:var(--purple);text-transform:uppercase}
+.field .sig{font-family:var(--script);font-size:26px;color:var(--purple);text-transform:none;letter-spacing:0}
+.pp-exp{text-align:right;font-family:var(--type);font-size:9px;color:var(--purple);margin-top:6px}
+.pp-note{text-align:center;margin-top:16px;font-family:var(--type);font-size:13px;color:var(--purple)}
+
+/* 4 · skills & works (ref 2 slides) */
+.slides{padding-block:56px;display:grid;gap:22px}
+.slide{background:#EFE5D4;border:1px solid var(--rule);padding:clamp(22px,4vw,40px);position:relative;overflow:hidden}
+.slide-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap}
+.grey-big{font-family:var(--sans);font-weight:800;color:#7E6A5E;font-size:clamp(30px,5vw,56px);line-height:.95;letter-spacing:-.02em}
+.grey-big .pinkline{color:var(--pink)}
+.skills-title{font-family:var(--bubble);color:var(--pink);font-size:clamp(64px,11vw,140px);line-height:.85}
+.skills{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:18px;margin-top:28px}
+.skill{background:#fff;padding:14px 16px 16px;box-shadow:0 2px 0 rgba(0,0,0,.06);min-width:0;position:relative}
+.skill:nth-child(odd){transform:rotate(-.6deg)}
+.skill:nth-child(even){transform:rotate(.5deg)}
+.skill .hand{font-size:32px;color:var(--pink);display:block;margin-bottom:4px}
+.skill p{font-size:14px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+.chips span{background:#fff;border:1px solid var(--rule);border-radius:999px;padding:5px 12px;font-family:var(--type);font-size:12px}
+.squiggle{width:120px;height:40px}
+
+/* 5 · WORK / Archive binder on red (ref 1) */
+.redzone{background:radial-gradient(120% 80% at 20% 10%,#7a2e1c 0%,#4a1a12 45%,#1a0b08 100%);padding-block:56px}
+.binder{max-width:1000px;margin:0 auto;display:grid;gap:0}
+.b-page{background:#F3EFE6;padding:clamp(20px,4vw,40px);position:relative;box-shadow:0 20px 40px -20px rgba(0,0,0,.7)}
+.b-page+.b-page{border-top:1px dashed #cfc6b7}
+.rings{position:relative;height:28px;margin:-14px 0;z-index:3;display:flex;justify-content:space-around;pointer-events:none}
+.rings i{width:16px;height:34px;border:3px solid #9a9a9a;border-radius:9px;background:transparent;transform:translateY(-3px)}
+.wa-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
+.wa-title{font-family:var(--serif);font-weight:500;font-size:clamp(46px,8vw,92px);letter-spacing:-.02em;line-height:.9;color:var(--ink)}
+.wa-title em{font-family:var(--script);font-style:normal;color:var(--red);font-size:1.02em}
+.wa-sub{font-family:var(--type);font-size:11px;letter-spacing:.06em;margin-top:6px}
+.wa-grid{display:grid;grid-template-columns:minmax(0,230px) minmax(0,1fr);gap:clamp(18px,3vw,34px);margin-top:28px}
+.index{list-style:none;margin:0;padding:0;border-top:1px solid #bdb3a4}
+.index li{border-bottom:1px solid #bdb3a4;padding:9px 0;font-size:20px;line-height:1.1}
+.index li:nth-child(odd){font-family:var(--serif)}
+.index li:nth-child(even){font-family:var(--serif);font-style:italic}
+.index sup{font-family:var(--type);font-size:10px;font-style:normal;margin-left:3px}
+.index a{color:var(--ink);text-decoration:none;border-bottom:2px solid var(--red)}
+.index .hint{display:block;font-family:var(--type);font-size:10px;font-style:normal;color:var(--muted);margin-top:3px}
+.sel{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));grid-auto-rows:minmax(70px,auto);gap:10px}
+.sel h3{grid-column:3/7;font-family:var(--heavy);font-size:clamp(34px,5vw,58px);line-height:.92;text-transform:uppercase;align-self:end}
+.tile{all:unset;cursor:zoom-in;display:block;position:relative;min-width:0}
+.tile img{width:100%;height:100%;object-fit:cover}
+.tile .cap{font-family:var(--type);font-size:9px;line-height:1.3;margin-top:4px;display:block}
+.tile:focus-visible{outline:2px solid var(--red);outline-offset:3px}
+.t1{grid-column:1/3;grid-row:1/4}.t2{grid-column:3/5;grid-row:2/5}.t3{grid-column:5/7;grid-row:2/4}
+.t4{grid-column:5/7;grid-row:4/6}.t5{grid-column:1/3;grid-row:4/6}
+.redbox{grid-column:3/5;grid-row:5/6;background:var(--red);color:#fff;font-family:var(--type);font-size:11px;padding:10px;line-height:1.35;align-self:start}
+.p2{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:clamp(18px,3vw,34px);align-items:start}
+.p2 h2{font-family:var(--heavy);font-size:clamp(28px,4vw,46px);line-height:1;text-transform:uppercase}
+.p2 h2 .r{color:var(--red)}
+.p2 .imgs{display:grid;grid-template-columns:1.3fr 1fr;gap:10px;margin-top:20px}
+.dropcap{font-family:var(--type);font-size:12.5px;line-height:1.5;margin-top:16px;max-width:60ch}
+.dropcap::first-letter{font-family:var(--serif);font-size:46px;float:left;line-height:.8;margin:4px 6px 0 0}
+.overlap{position:relative;margin-top:14px;text-align:right}
+.overlap .s1{font-family:var(--serif);color:var(--red);font-size:clamp(26px,3vw,36px);display:block}
+.overlap .s2{font-family:var(--script);color:var(--red);font-size:clamp(54px,7vw,84px);display:block;margin-top:-22px;line-height:1}
+
+/* 6 · PR box case study: pink folder slices (ref 4) */
+.case{padding-block:56px}
+.case-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:22px}
+.case-head h2{font-family:var(--serif);font-size:clamp(40px,6vw,72px);letter-spacing:-.02em}
+.case-head h2 em{font-family:var(--script);font-style:normal;color:var(--red)}
+.case-head p{max-width:52ch;font-size:16px}
+.slices{display:flex;gap:0;height:clamp(420px,58vw,620px);overflow-x:auto;scrollbar-width:thin;padding-top:30px}
+.slice{all:unset;cursor:pointer;position:relative;flex:1 0 150px;height:100%;background:var(--pink-tab);margin-left:-18px;
+  border-radius:0 18px 0 0;box-shadow:-8px 0 14px -10px rgba(0,0,0,.45);overflow:visible}
+.slice:first-child{margin-left:0;flex:1.2 0 190px}
+.slice .tabcut{position:absolute;top:-26px;right:0;width:60%;height:28px;background:var(--pink-tab);border-radius:16px 16px 0 0}
+.slice .peek{position:absolute;inset:44px 18px 0 46px;overflow:hidden;background:#ddd}
+.slice .peek img{width:100%;height:100%;object-fit:cover;object-position:top}
+.slice .label{position:absolute;top:56px;left:8px;writing-mode:vertical-rl;transform:rotate(180deg);background:#fff;padding:8px 5px;
+  font-family:var(--type);font-size:12px;box-shadow:0 1px 2px rgba(0,0,0,.2);z-index:2}
+.slice .vscript{position:absolute;left:6px;bottom:20px;writing-mode:vertical-rl;transform:rotate(180deg);font-family:var(--serif);font-size:clamp(40px,5vw,62px);color:var(--brown);z-index:2;line-height:1;white-space:nowrap}
+.slice .vscript em{font-family:var(--script);font-style:normal}
+.slice[aria-expanded="true"]{background:var(--pink)}
+.slice[aria-expanded="true"] .tabcut{background:var(--pink)}
+.slice:focus-visible{outline:3px solid var(--red);outline-offset:-3px}
+.slice:hover .peek img{transform:scale(1.03);transition:transform .3s}
+
+.detail{background:var(--sheet);border:1px solid var(--rule);border-top:6px solid var(--pink);padding:clamp(20px,4vw,40px);margin-top:0}
+.d-kicker{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;color:var(--muted);border-bottom:1px solid var(--rule);padding-bottom:10px}
+.d-head{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:clamp(18px,4vw,44px);margin-top:22px;align-items:end}
+.d-head h3{font-family:var(--serif);font-weight:700;font-size:clamp(34px,5vw,62px);letter-spacing:-.015em;color:var(--brown)}
+.d-head h3 em{font-family:var(--script);font-style:normal;font-weight:400;color:var(--red)}
+.role{display:inline-block;margin-top:12px;font-family:var(--type);font-size:12px;background:var(--red);color:#fff;padding:4px 10px}
+.d-head p{font-size:16.5px;max-width:60ch}
+.flip{display:inline-flex;margin-top:20px;border:1px solid var(--brown)}
+.flip button{border:0;background:transparent;font:600 13px var(--sans);padding:10px 16px;min-height:44px;cursor:pointer;color:var(--brown)}
+.flip button[aria-pressed="true"]{background:var(--brown);color:var(--sheet)}
+.shots{display:grid;gap:18px;margin-top:22px}
+.shots.two{grid-template-columns:repeat(auto-fit,minmax(min(100%,400px),1fr))}
+.shots.five{grid-template-columns:repeat(5,minmax(0,1fr))}
+.shot{margin:0;min-width:0}
+.shot button{all:unset;cursor:zoom-in;display:block;width:100%}
+.shot button:focus-visible{outline:2px solid var(--red);outline-offset:4px}
+.shot img{width:100%;box-shadow:0 10px 22px -14px rgba(0,0,0,.55)}
+.shot.flat img{box-shadow:none}
+.shot figcaption{font-family:var(--type);font-size:12px;color:var(--muted);margin-top:8px}
+.defs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,230px),1fr));margin-top:28px;border-top:2px solid var(--brown)}
+.def{padding:14px 18px 16px 0;border-bottom:1px solid var(--rule);min-width:0}
+.def h4{margin:0 0 6px;font-family:var(--type);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--red)}
+.def p,.def li{font-size:14.5px}
+.def ul{margin:0;padding-left:18px}
+.quote{font-family:var(--serif);font-style:italic;font-size:clamp(22px,3vw,32px);color:var(--brown);border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:18px 0;margin-top:24px}
+.tablewrap{overflow-x:auto;margin-top:22px}
+table{border-collapse:collapse;width:100%;min-width:680px;font-size:14px}
+th{font-family:var(--type);font-size:11px;text-align:left;color:var(--red);border-bottom:2px solid var(--brown);padding:8px 12px 6px 0;text-transform:uppercase;letter-spacing:.05em}
+td{border-bottom:1px solid var(--rule);padding:10px 12px 10px 0;vertical-align:top}
+td:first-child{font-weight:700}
+
+/* 7 · wrap-up envelope (ref 2 last slide) */
+.wrapup{padding-block:56px 70px}
+.env-slide{background:#EFE5D4;border:1px solid var(--rule);position:relative;overflow:hidden;min-height:440px;padding:clamp(22px,4vw,40px)}
+.env{position:absolute;left:8%;bottom:-40px;width:min(560px,80%);height:300px;background:var(--pink-soft);clip-path:polygon(0 30%,50% 0,100% 30%,100% 100%,0 100%)}
+.env::after{content:"";position:absolute;inset:0;background:var(--pink);clip-path:polygon(0 30%,50% 70%,100% 30%,100% 100%,0 100%)}
+.letter{position:relative;z-index:2;width:min(380px,74%);margin-left:12%;margin-top:40px;background:#fff;padding:18px 20px 22px;transform:rotate(-2deg);
+  background-image:linear-gradient(transparent 27px,#c9d6e6 28px);background-size:100% 28px;box-shadow:0 8px 18px -10px rgba(0,0,0,.4)}
+.letter p{font-family:var(--hand);font-size:25px;line-height:28px}
+.thatsa{position:absolute;right:clamp(16px,4vw,40px);top:clamp(20px,4vw,40px);text-align:right;font-family:var(--sans);font-weight:900;color:var(--brown);font-size:clamp(46px,8vw,96px);line-height:.88;letter-spacing:-.03em;z-index:2}
+.thatsa.bottom{top:auto;bottom:clamp(20px,4vw,36px)}
+.contact{position:absolute;left:clamp(16px,4vw,40px);top:clamp(16px,3vw,30px);z-index:2;display:grid;gap:6px}
+.contact .row{display:flex;align-items:center;gap:8px;font-family:var(--type);font-size:13px}
+.contact .ic{width:18px;height:18px;border:1.5px solid var(--ink);border-radius:50%}
+.copy{border:1px solid var(--ink);background:#fff;font:600 12px var(--sans);min-height:32px;padding:0 10px;cursor:pointer}
+
+footer{padding-block:24px 50px;color:var(--muted)}
+
+/* lightbox */
+.lb{position:fixed;inset:0;background:rgba(25,12,10,.93);z-index:20;display:grid;place-items:center;
+  padding:max(20px,env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) max(20px,env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.lb img{max-height:86vh;max-width:min(1400px,100%);object-fit:contain}
+.lb p{color:#F3E6CC;margin-top:12px;text-align:center;font-family:var(--type);font-size:13px}
+.lb button{position:absolute;top:calc(14px + env(safe-area-inset-top,0px));right:calc(14px + env(safe-area-inset-right,0px));min-width:44px;min-height:44px;border:1px solid #F3E6CC;background:transparent;color:#F3E6CC;font:600 14px var(--sans);cursor:pointer;padding:0 14px}
+
+@media (max-width:820px){
+  .vox{grid-template-columns:1fr}.vox .col.r{justify-items:start}.vox img{max-width:300px;margin:0 auto}
+  .wa-grid,.p2,.d-head{grid-template-columns:1fr}
+  .sel{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .sel h3{grid-column:1/5}.t1{grid-column:1/3;grid-row:auto}.t2{grid-column:3/5;grid-row:auto}.t3{grid-column:1/3;grid-row:auto}
+  .t4{grid-column:3/5;grid-row:auto}.t5{grid-column:1/3;grid-row:auto}.redbox{grid-column:3/5;grid-row:auto}
+  .shots.five{grid-template-columns:repeat(3,minmax(0,1fr))}
+  .polaroid{right:6px;top:-60px}
+  .hello{min-height:600px}
+  .pp-bottom{grid-template-columns:1fr}
+  .pp-left{display:grid;grid-template-columns:110px 1fr;gap:12px;align-items:end}
+  .thatsa{position:relative;right:auto;top:auto;text-align:left;margin-top:10px}
+  .contact{position:relative;left:auto;top:auto}
+  .letter{margin-left:4%}
+}
+@media (max-width:480px){.shots.five{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (prefers-reduced-motion:reduce){.slice:hover .peek img{transform:none}}
+</style>
+
+<!-- 1 · COVER -->
+<header class="cover wrap" id="cover">
+  <div class="corner caps"><span>Creative strategy &amp; PR</span><span>2026 –</span></div>
+  <div class="folder-wrap">
+    <div class="f-sheet2" aria-hidden="true"></div>
+    <div class="f-sheet" aria-hidden="true"></div>
+    <figure class="polaroid" style="margin:0">
+      <span class="clip" aria-hidden="true"></span>
+      <img src="img/ram-polaroid.jpg" alt="Ram Raman eating dessert with a spoon, grinning at the camera" style="aspect-ratio:1/1.05;object-fit:cover;width:100%">
+    </figure>
+    <div class="folder">
+      <span class="cv-script">Creative</span>
+      <span class="cv-heavy">PORTFOLIO</span>
+      <div class="cv-name">RAM RAMAN</div>
+    </div>
+  </div>
+  <div class="corner caps"><span>Creative strategy · PR · creator campaigns</span><span>Mumbai, India</span></div>
+</header>
+
+<nav class="nav" aria-label="Portfolio sections">
+  <div class="wrap">
+    <ul>
+      <li><a href="#hello"><span>hi, I'm Ram</span></a></li>
+      <li><a href="#id"><span>my ID</span></a></li>
+      <li><a href="#vox"><span>vox pop</span></a></li>
+      <li><a href="#skills"><span>what I do</span></a></li>
+      <li><a href="#work"><span>project 01</span></a></li>
+      <li><a href="#wrap"><span>contact</span></a></li>
+    </ul>
+  </div>
+</nav>
+
+<main>
+<!-- 2 · HELLO -->
+<section class="wrap" id="hello" style="padding-block:40px 0">
+  <div class="hello">
+    <p class="hand a">Hi. Since you're new here.</p>
+    <p class="hand b">let me be ya tour guide</p>
+    <p class="hand c">This is</p>
+    <h1 class="bubble" aria-label="Ram Raman"><span>RAM</span><span>RAMAN</span></h1>
+    <img class="cutout" src="img/ram-hello.png" alt="Ram Raman, arms crossed, smiling, in halftone" style="object-fit:contain;object-position:bottom;border-radius:0">
+    <div class="hello-foot"><span class="lower"><b>Ram Raman</b><span>Creative Strategist &amp; PR · Mumbai</span></span><span class="type" style="align-self:end">By Ram Raman</span></div>
+  </div>
+</section>
+
+<!-- 3 · ID -->
+<section class="passport-bg" id="id" style="margin-top:40px">
+  <div class="wrap">
+    <div class="pp">
+      <div class="pp-card">
+        <div class="starrow t" aria-hidden="true"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="starrow b" aria-hidden="true"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="starcol l" aria-hidden="true"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="starcol r" aria-hidden="true"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="pp-top">
+          <span class="pp-word" aria-hidden="true">Passport.</span>
+          <img class="pp-photo" src="img/ram-passport.jpg" alt="Ram Raman in front of the Husainabad clock tower, halftone duotone">
+        </div>
+        <span class="bigstar" style="right:22px;top:20px" aria-hidden="true">★</span>
+        <span class="bigstar" style="left:84px;bottom:22px" aria-hidden="true">★</span>
+      </div>
+      <div class="pp-card">
+        <div class="starrow t" aria-hidden="true"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="starrow b" aria-hidden="true"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="starcol l" aria-hidden="true"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="starcol r" aria-hidden="true"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <div class="pp-bottom">
+          <div class="pp-left">
+            <img class="pp-small" src="img/ram-passport-small.jpg" alt="Ram Raman portrait, halftone">
+            <div><p class="pp-script">Passport.</p><small>signature of authorized creative.</small></div>
+          </div>
+          <div class="fields">
+            <div class="field"><label>name:</label><b>Ram Raman</b></div>
+            <div class="field"><label>based in:</label><b>Mumbai, India</b></div>
+            <div class="field full"><label>title:</label><b>Creative Strategist &amp; PR</b></div>
+            <div class="field full"><label>profession:</label><b>Strategy, PR boxes, creator campaigns, AI image &amp; video</b></div>
+            <div class="field full"><label>signature:</label><b class="sig">Ram Raman</b></div>
+          </div>
+        </div>
+        <p class="pp-exp">expires: never</p>
+      </div>
+      <p class="pp-note">Valid for: creators, brands and anyone with a story worth putting in a box.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 3b · VOX POP -->
+<section class="wrap" id="vox" style="padding-block:56px 0">
+  <div class="slide">
+    <div class="slide-head">
+      <span class="mic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="2" width="6" height="12" rx="3"/><path d="M5 11a7 7 0 0 0 14 0M12 18v4M8 22h8"/></svg><span class="flag">Nisho TV · on the street</span></span>
+      <span class="stamp">Vox pop</span>
+    </div>
+    <p class="grey-big" style="margin-top:18px">we stopped a strategist<br><span class="pinkline">and asked him three things.</span></p>
+    <div class="vox">
+      <div class="col">
+        <div class="bub q"><small>Q · so what do you actually do?</small><p>“I build the idea and then the whole world around it: the campaign, the PR box, the creator content, the shoot, even the AI images and video.”</p></div>
+        <div class="bub q"><small>Q · where does an idea start?</small><p>“From a reference. I find something that already works, take it apart piece by piece, then rebuild it so only you could have made it.”</p></div>
+      </div>
+      <img src="img/ram-vox.png" alt="Ram Raman wearing four pairs of glasses stacked on his face, halftone">
+      <div class="col r">
+        <div class="bub r"><small>Q · why work with you?</small><p>“Because people keep what I make. A box they post, a reel they share, a story they tell their friends about.”</p></div>
+        <span class="lower"><b>Ram Raman</b><span>Creative Strategist &amp; PR</span></span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4 · SKILLS & WORKS -->
+<section class="wrap slides" id="skills">
+  <div class="slide">
+    <div class="slide-head">
+      <p class="grey-big">it's not just content,<br><span class="pinkline">it's a world you can hold.</span></p>
+      <p class="type" style="max-width:40ch">For creators and brands. I start every project from a reference, decode it piece by piece, then rebuild it into something people want to keep, post and talk about.</p>
+    </div>
+  </div>
+  <div class="slide">
+    <h2 class="skills-title">skills<br>&amp; works</h2>
+    <div class="skills">
+      <div class="skill"><span class="hand">creative strategy</span><p>The big idea behind a launch, a drop, a collab or an event, and the plan to make people care.</p></div>
+      <div class="skill"><span class="hand">PR &amp; seeding boxes</span><p>Invite and gift boxes creators keep and post, personalised with their own name and face.</p></div>
+      <div class="skill"><span class="hand">creator campaigns</span><p>Briefs, hooks, scripts and reels, from the first message to the final edit.</p></div>
+      <div class="skill"><span class="hand">AI image &amp; video</span><p>Campaign stills, product images and video made with AI, checked shot by shot against the real thing.</p></div>
+    </div>
+    <div class="chips" aria-label="Tools">
+      <span>Higgsfield</span><span>ElevenLabs</span><span>Meta Ads</span><span>Shopify</span><span>Claude</span><span>Canva</span><span>Foreplay</span>
+    </div>
+  </div>
+</section>
+
+<!-- 5 · WORK / ARCHIVE -->
+<section class="wrap" aria-label="Projects" style="padding-block:56px 26px">
+  <div style="display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap;border-bottom:3px solid var(--ink);padding-bottom:12px">
+    <h2 style="font-family:var(--heavy);text-transform:uppercase;font-size:clamp(46px,9vw,110px);line-height:.85">Project <span style="color:var(--pink)">01</span></h2>
+    <p class="type" style="max-width:44ch">Golden Diwali House: a PR box for Nishorama × Hopshop's Diwali party. Client project. My role: concept, creative strategy and design.</p>
+  </div>
+</section>
+<section class="redzone" id="work">
+  <div class="wrap">
+    <div class="binder">
+      <div class="b-page">
+        <div class="wa-head">
+          <div><p class="wa-sub">PROJECT 01 / CLIENT: NISHORAMA × HOPSHOP</p><h2 class="wa-title">WORK/<em>Archive</em></h2><p class="wa-sub">PR BOX / PRINT / CREATOR SEEDING / 2026</p></div>
+          <a class="caps" href="#prbox" style="color:var(--ink)">See the case ↗</a>
+        </div>
+        <div class="wa-grid">
+          <ul class="index">
+            <li><a href="#prbox">Golden Diwali House</a><sup>['26 · PR box]</sup><span class="hint">Client: Nishorama × Hopshop. Open the case below</span></li>
+            <li>Role<sup>[concept · strategy · design]</sup></li>
+            <li>For<sup>[75 creators, Mumbai]</sup></li>
+            <li>Pieces<sup>[matchbox · licence · shagun · phuljhadi · newspaper]</sup></li>
+          </ul>
+          <div class="sel">
+            <h3>Selected<br>work</h3>
+            <button class="tile t1" data-full="img/box-lid.jpg"><img src="img/box-lid.jpg" alt="The matchbox lid with Ria under red rays"><span class="cap">MATCHBOX LID · GOLDEN DIWALI HOUSE</span></button>
+            <button class="tile t2" data-full="img/phuljhadi-A.jpg"><img src="img/phuljhadi-A.jpg" alt="Phuljhadi sparkler box, Golden" style="height:280px;object-position:top"><span class="cap">PHULJHADI · NOSTALGIA</span></button>
+            <button class="tile t3" data-full="img/licence-front.png"><img src="img/licence-front.png" alt="The Partying Licence"><span class="cap">LICENCE · THE INVITE</span></button>
+            <button class="tile t4" data-full="img/note-front.jpg"><img src="img/note-front.jpg" alt="Nisho Notes shagun banknote"><span class="cap">SHAGUN · RESERVE BANK OF NISHORAMA</span></button>
+            <button class="tile t5" data-full="img/times-front.jpg"><img src="img/times-front.jpg" alt="The Times of Nishorama front page" style="height:200px;object-position:top"><span class="cap">THE TIMES · SHE IS THE SPARK</span></button>
+            <p class="redbox">What people keep is not the gift. It is the feeling of being chosen. Every piece in this box carries the creator's own name or face.</p>
+          </div>
+        </div>
+      </div>
+      <div class="rings" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+      <div class="b-page p2">
+        <div>
+          <h2>Turning a Diwali party into <span class="r">a box creators keep,</span> <span class="r">post</span> and <span class="r">remember</span></h2>
+          <div class="imgs">
+            <button class="tile" data-full="img/times-wrap.jpg"><img src="img/times-wrap.jpg" alt="The Times incense wrap"><span class="cap">INCENSE WRAP</span></button>
+            <button class="tile" data-full="img/dress-code.jpg"><img src="img/dress-code.jpg" alt="Dress code drawing: Iraana, Ishq, Chashni"><span class="cap">DRESS CODE · IRAANA / ISHQ / CHASHNI</span></button>
+          </div>
+          <p class="dropcap">A brand event invite usually gets opened once. For Nishorama × Hopshop's Diwali party, I wanted 75 creators to open a giant desi matchbox and find four Diwali rituals inside: an invitation that is also their entry ID, shagun money from the Reserve Bank of Nishorama, a phuljhadi box with their own face on it, and incense wrapped in a newspaper about respecting the women who light every home. Each piece tells its own story; together they tell the party's.</p>
+        </div>
+        <div>
+          <p class="overlap" style="margin:0 0 18px"><span class="s1">Golden</span><span class="s2">Diwali House</span></p>
+          <button class="tile" data-full="img/licence-back.png"><img src="img/licence-back.png" alt="Licence back: legend for Class of Fun" style="height:auto"><span class="cap">LICENCE BACK · CLASS OF FUN</span></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 6 · CASE: THE PR BOX -->
+<section class="wrap case" id="prbox">
+  <div class="case-head">
+    <h2>The PR box, <em>file by file.</em></h2>
+    <p>Project 01 · client: Nishorama × Hopshop. A PR box for their Diwali party, built as one big matchbox, for 75 creators (3 Nov 2026, Fielia Bombay, Mumbai). Open a folder to see each piece, its story and its graphics.</p>
+  </div>
+  <div class="slices" role="group" aria-label="Pieces of the PR box">
+    <button class="slice" aria-expanded="true" aria-controls="d-box" data-open="d-box"><span class="tabcut"></span><span class="label">the matchbox</span><span class="peek"><img src="img/box-lid.jpg" alt=""></span><span class="vscript">the <em>PR box</em></span></button>
+    <button class="slice" aria-expanded="false" aria-controls="d-licence" data-open="d-licence"><span class="tabcut"></span><span class="label">the licence · invite</span><span class="peek"><img src="img/licence-front.png" alt="" style="object-fit:contain;background:#f6e6dc"></span></button>
+    <button class="slice" aria-expanded="false" aria-controls="d-shagun" data-open="d-shagun"><span class="tabcut"></span><span class="label">the shagun notes</span><span class="peek"><img src="img/note-front.jpg" alt="" style="object-position:30% 50%"></span></button>
+    <button class="slice" aria-expanded="false" aria-controls="d-phuljhadi" data-open="d-phuljhadi"><span class="tabcut"></span><span class="label">the phuljhadi</span><span class="peek"><img src="img/phuljhadi-B.jpg" alt=""></span></button>
+    <button class="slice" aria-expanded="false" aria-controls="d-times" data-open="d-times"><span class="tabcut"></span><span class="label">the times · incense</span><span class="peek"><img src="img/times-front.jpg" alt=""></span></button>
+    <button class="slice" aria-expanded="false" aria-controls="d-print" data-open="d-print"><span class="tabcut"></span><span class="label">production</span><span class="peek" style="background:#2a1a15"><img src="img/times-wrap.jpg" alt="" style="opacity:.5"></span></button>
+  </div>
+
+  <article class="detail" id="d-box">
+    <div class="d-kicker type"><span>The shell · packaging</span><span>Rigid drawer box · 350 × 235 mm label</span></div>
+    <div class="d-head"><div><h3>The <em>matchbox.</em></h3><span class="role">first impression</span></div>
+      <p>Diwali starts with a matchstick, so the invite starts with a matchbox. The lid is a full-landscape screenprint label like a vintage Sivakasi maachis box: red rays meeting behind the creator's head, नीं roundels in the corners, brown dabu with a leopard edge. The creator's own photo breaks out of the arch, so the first thing they see is themselves on a Diwali label.</p></div>
+    <div class="shots"><figure class="shot"><button data-full="img/box-lid.jpg" aria-label="Enlarge the lid"><img src="img/box-lid.jpg" alt="Matchbox lid with Ria under red rays"></button><figcaption>Lid label · sample: Ria</figcaption></figure></div>
+    <div class="defs">
+      <div class="def"><h4>Elements</h4><ul><li>Screenprint rays meeting behind the head</li><li>Creator's real photo, head out of the arch</li><li>नीं corner roundels, dabu, leopard edge</li><li>Safety matches + creator's name on the sides</li></ul></div>
+      <div class="def"><h4>Why it works</h4><p>The most ordinary Diwali object in an Indian home, made giant, premium and personal. It becomes a keepsake rather than a mailer.</p></div>
+      <div class="def"><h4>Per creator</h4><p>Photo and name change; all 75 lids come from one master.</p></div>
+    </div>
+  </article>
+
+  <article class="detail" id="d-licence" hidden>
+    <div class="d-kicker type"><span>Item 1 · the invitation</span><span>CR80 card · 85.6 × 54 mm · two sides</span></div>
+    <div class="d-head"><div><h3>The Partying <em>Licence.</em></h3><span class="role">invite + compulsory entry ID</span></div>
+      <p>The invitation arrives as an ID card, laid out like an Indian driving licence and issued by the "Union of Nisho". It carries every detail of the night, and it is the only way in: guests show it at the door and keep it on them all night. An invite that doubles as a pass is one people keep, carry and post.</p></div>
+    <div class="flip" role="group" aria-label="Show side"><button aria-pressed="true" data-side="front">Front</button><button aria-pressed="false" data-side="back">Back</button></div>
+    <div class="shots"><figure class="shot flat"><button data-full="img/licence-front.png" id="lic-btn" aria-label="Enlarge the licence"><img id="lic-img" src="img/licence-front.png" alt="Licence front with Ria's photo, QR, venue and signatures"></button><figcaption id="lic-cap">Front · sample: Ria</figcaption></figure></div>
+    <div class="defs">
+      <div class="def"><h4>Front</h4><ul><li>Nishorama State Partying Licence</li><li>DOE 03-11-2026 · valid till: cease to exist</li><li>Class of Fun codes in place of vehicle classes</li><li>Venue, 9 PM, dress code, full address</li><li>Signed by Ria and Ramnek</li></ul></div>
+      <div class="def"><h4>Back</h4><ul><li>Legend for Class of Fun: paparazzi, tarot + tattoo, photobooth + chaat, after-dark DJ, cover room, bounce house</li><li>A warning in government language</li></ul></div>
+      <div class="def"><h4>Graphic language</h4><p>The blush card, red band and red cog of a real licence, with Nisho brown type and a faded नीं watermark. Official at a glance, a joke on the second look.</p></div>
+      <div class="def"><h4>Per creator</h4><p>Name, photo and licence number NS 0311 2026 001–075.</p></div>
+    </div>
+  </article>
+
+  <article class="detail" id="d-shagun" hidden>
+    <div class="d-kicker type"><span>Item 2 · the blessing</span><span>Note · 156 × 66 mm · two sides</span></div>
+    <div class="d-head"><div><h3>Shagun, by the <em>Reserve Bank of Nishorama.</em></h3><span class="role">prosperity and luck</span></div>
+      <p>When someone visits an Indian home, the elders press a little money into their hand: shagun, a wish for prosperity and luck. The box does the same, with an engraved 100 from the Reserve Bank of Nishorama.</p></div>
+    <div class="flip" role="group" aria-label="Show side"><button aria-pressed="true" data-note="front">Front</button><button aria-pressed="false" data-note="back">Back</button></div>
+    <div class="shots"><figure class="shot"><button data-full="img/note-front.jpg" id="note-btn" aria-label="Enlarge the note"><img id="note-img" src="img/note-front.jpg" alt="Nisho Note front: engraved Ria, नीं seals, signatures"></button><figcaption id="note-cap">Front · serial NS 001/075</figcaption></figure></div>
+    <div class="defs">
+      <div class="def"><h4>Elements</h4><ul><li>Engraved portrait in the oval</li><li>Both seals are the brown नीं logo</li><li>Signed by Ria, Treasurer, and Ramnek, Secretary</li><li>Gateway of India and straight 100s on the back</li></ul></div>
+      <div class="def"><h4>Graphic language</h4><p>Intaglio lines, guilloche and engraved lettering in one brown ink on cream. A banknote's anatomy, none of a real one's marks, and "Not legal tender" on both sides.</p></div>
+      <div class="def"><h4>Per creator</h4><p>Serial NS 001/075 to 075/075.</p></div>
+    </div>
+  </article>
+
+  <article class="detail" id="d-phuljhadi" hidden>
+    <div class="d-kicker type"><span>Item 3 · the nostalgia</span><span>Sparkler box front · 63.5 × 254 mm</span></div>
+    <div class="d-head"><div><h3>Your face on the <em>phuljhadi.</em></h3><span class="role">the Diwali staple, made personal</span></div>
+      <p>Every Indian childhood has a phuljhadi box in it: tall, loud, gaudy, with a film star on the front. We kept all of that and put the creator where the star used to be, so opening it takes them straight back to lighting sparklers on the balcony.</p></div>
+    <div class="shots five">
+      <figure class="shot"><button data-full="img/phuljhadi-A.jpg" aria-label="Enlarge Golden"><img src="img/phuljhadi-A.jpg" alt="Phuljhadi A Golden"></button><figcaption>A · Golden</figcaption></figure>
+      <figure class="shot"><button data-full="img/phuljhadi-B.jpg" aria-label="Enlarge Tulsi Red"><img src="img/phuljhadi-B.jpg" alt="Phuljhadi B Tulsi Red"></button><figcaption>B · Tulsi Red</figcaption></figure>
+      <figure class="shot"><button data-full="img/phuljhadi-C.jpg" aria-label="Enlarge Electric"><img src="img/phuljhadi-C.jpg" alt="Phuljhadi C Electric"></button><figcaption>C · Electric</figcaption></figure>
+      <figure class="shot"><button data-full="img/phuljhadi-D.jpg" aria-label="Enlarge Nisho Gold"><img src="img/phuljhadi-D.jpg" alt="Phuljhadi D Nisho Gold"></button><figcaption>D · Nisho Gold</figcaption></figure>
+      <figure class="shot"><button data-full="img/phuljhadi-E.jpg" aria-label="Enlarge Anaar"><img src="img/phuljhadi-E.jpg" alt="Phuljhadi E Anaar"></button><figcaption>E · Anaar</figcaption></figure>
+    </div>
+    <div class="defs">
+      <div class="def"><h4>Elements</h4><ul><li>Firework cap, 3D title, script sub-title</li><li>A window of silver sticks</li><li>Litho swirl behind the creator</li><li>Seal, starburst, "extra long" ribbon, dabu strip</li></ul></div>
+      <div class="def"><h4>Graphic language</h4><p>Maximal on purpose, like real cracker packets, kept premium by an ornate border and brand brown and gold.</p></div>
+      <div class="def"><h4>Per creator</h4><p>Their real photo and "Featuring" line, never a generated face.</p></div>
+    </div>
+  </article>
+
+  <article class="detail" id="d-times" hidden>
+    <div class="d-kicker type"><span>Item 4 · the respect</span><span>Incense wrap 349 × 264 mm · front page A4</span></div>
+    <div class="d-head"><div><h3>The Times <em>of Nishorama.</em></h3><span class="role">respect for women's dignity</span></div>
+      <p>The incense comes wrapped in a newspaper with one story: in every home, the first diya of Diwali is lit by a woman, and she is the one who brings out the spark and the care. The house opens with one rule at the door: respect every woman.</p></div>
+    <p class="quote">“She is the spark and the care. Respect her, and the whole house shines.”</p>
+    <div class="shots two">
+      <figure class="shot"><button data-full="img/times-front.jpg" aria-label="Enlarge front page"><img src="img/times-front.jpg" alt="The Times front page: She is the spark"></button><figcaption>Front page</figcaption></figure>
+      <figure class="shot"><button data-full="img/times-wrap.jpg" aria-label="Enlarge incense wrap"><img src="img/times-wrap.jpg" alt="Incense wrap with dabu border"></button><figcaption>Incense wrap</figcaption></figure>
+    </div>
+    <div class="defs">
+      <div class="def"><h4>On the page</h4><ul><li>Masthead with the नीं mark, price: respect</li><li>House rules: her yes is yes, her no is no, look out for each other</li><li>Dress code: Iraana, Ishq and Chashni, drawn from the real garments</li></ul></div>
+      <div class="def"><h4>Graphic language</h4><p>A 1950s Indian broadsheet: condensed serif heads, ruled columns, a red banner, on real newsprint.</p></div>
+    </div>
+  </article>
+
+  <article class="detail" id="d-print" hidden>
+    <div class="d-kicker type"><span>Production</span><span>75 boxes · print-ready files</span></div>
+    <div class="d-head"><div><h3>From file to <em>doorstep.</em></h3></div>
+      <p>Every piece ships as a print-ready PDF at real size, 300 dpi, with bleed and crop marks, plus a spec sheet for the printer.</p></div>
+    <div class="tablewrap"><table>
+      <thead><tr><th>Piece</th><th>Trim</th><th>Sides</th><th>Stock &amp; finish</th><th>Per creator</th></tr></thead>
+      <tbody>
+        <tr><td>Matchbox lid</td><td>350 × 235 mm</td><td>1</td><td>Art paper on rigid greyboard, matte lamination</td><td>Photo + name</td></tr>
+        <tr><td>Licence</td><td>85.6 × 54 mm</td><td>2</td><td>PVC or 400 gsm card, rounded corners</td><td>Name, photo, number</td></tr>
+        <tr><td>Shagun notes</td><td>156 × 66 mm</td><td>2</td><td>Cotton bond</td><td>Serial</td></tr>
+        <tr><td>Phuljhadi box</td><td>63.5 × 254 mm</td><td>front</td><td>300 gsm SBS, gloss</td><td>Photo + line</td></tr>
+        <tr><td>The Times</td><td>349 × 264 mm + A4</td><td>1</td><td>Newsprint</td><td>Same for all</td></tr>
+      </tbody></table></div>
+  </article>
+</section>
+
+<!-- 7 · WRAP -->
+<section class="wrap wrapup" id="wrap">
+  <div class="env-slide">
+    <div class="contact">
+      <div class="row"><span class="ic" aria-hidden="true"></span><span id="mail">zoneofzane@gmail.com</span><button class="copy" type="button" data-copy="mail">Copy</button></div>
+      <div class="row"><span class="ic" aria-hidden="true"></span><a href="https://www.instagram.com/_ram_raman_/" style="color:var(--ink)">@_ram_raman_</a></div>
+      <div class="row"><span class="ic" aria-hidden="true"></span><span id="phone">+91 70144 36466</span><button class="copy" type="button" data-copy="phone">Copy</button><span class="type">call / WhatsApp</span></div>
+      <div class="row"><span class="ic" aria-hidden="true"></span><a id="site" href="https://ramramanchhipa-art.github.io/ram-raman-portfolio/" style="color:var(--ink)">ramramanchhipa-art.github.io/ram-raman-portfolio</a></div>
+    </div>
+    <p class="thatsa">and<br>that's</p>
+    <div class="letter"><p>Thank you so much for taking the time to look through my portfolio! If you want a launch, a PR box or a campaign people actually keep, let's make it together. Love, Ram</p></div>
+    <div class="env" aria-hidden="true"></div>
+    <p class="thatsa bottom">a wrap.</p>
+    <img src="img/ram-spoon.png" alt="Ram Raman tasting dessert, halftone" style="position:absolute;right:clamp(140px,26vw,360px);bottom:0;width:clamp(150px,20vw,240px);z-index:1">
+  </div>
+</section>
+</main>
+
+<footer class="wrap type"><span>Ram Raman · Creative Strategist &amp; PR · Mumbai · Project 01 shown with the client's branding, Nishorama × Hopshop, 2026</span></footer>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-label="Enlarged image">
+  <button id="lb-close" type="button">Close</button>
+  <div><img id="lb-img" src="" alt=""><p id="lb-cap"></p></div>
+</div>
+
+<script>
+(function(){
+  // folder slices open one detail at a time
+  var slices=[].slice.call(document.querySelectorAll('.slice'));
+  function open(id){
+    slices.forEach(function(s){
+      var on=s.dataset.open===id;
+      s.setAttribute('aria-expanded',on?'true':'false');
+      document.getElementById(s.dataset.open).hidden=!on;
+    });
+  }
+  slices.forEach(function(s){s.addEventListener('click',function(){open(s.dataset.open);
+    document.getElementById(s.dataset.open).scrollIntoView({behavior:'smooth',block:'start'})})});
+
+  function flip(sel,imgId,btnId,capId,files,caps){
+    document.querySelectorAll(sel).forEach(function(b){
+      b.addEventListener('click',function(){
+        var side=b.dataset.side||b.dataset.note;
+        document.querySelectorAll(sel).forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
+        document.getElementById(imgId).src=files[side];document.getElementById(btnId).dataset.full=files[side];
+        document.getElementById(capId).textContent=caps[side];
+      })
+    })
+  }
+  flip('[data-side]','lic-img','lic-btn','lic-cap',{front:'img/licence-front.png',back:'img/licence-back.png'},{front:'Front · sample: Ria',back:'Back · legend for Class of Fun'});
+  flip('[data-note]','note-img','note-btn','note-cap',{front:'img/note-front.jpg',back:'img/note-back.jpg'},{front:'Front · serial NS 001/075',back:'Back · Gateway of India'});
+
+  // nav highlight
+  var links=[].slice.call(document.querySelectorAll('.nav a'));
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){
+      links.forEach(function(l){l.setAttribute('aria-current',l.getAttribute('href')==='#'+e.target.id?'true':'false')})}})},{rootMargin:'-40% 0px -55% 0px'});
+    links.forEach(function(l){var t=document.querySelector(l.getAttribute('href'));if(t)io.observe(t)});
+  }
+
+  // copy buttons
+  document.querySelectorAll('[data-copy]').forEach(function(b){
+    b.addEventListener('click',function(){
+      var el=document.getElementById(b.dataset.copy),txt=el.textContent;
+      function sel(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r)}
+      if(navigator.clipboard){navigator.clipboard.writeText(txt).then(function(){b.textContent='Copied'},sel)}else sel();
+    })
+  });
+
+  // lightbox
+  var lb=document.getElementById('lb'),im=document.getElementById('lb-img'),cap=document.getElementById('lb-cap'),last=null;
+  document.addEventListener('click',function(e){
+    var b=e.target.closest('[data-full]');if(!b)return;
+    last=b;var i=b.querySelector('img');im.src=b.dataset.full;im.alt=i?i.alt:'';cap.textContent=i?i.alt:'';
+    lb.hidden=false;document.getElementById('lb-close').focus();
+  });
+  function close(){lb.hidden=true;im.src='';if(last)last.focus()}
+  document.getElementById('lb-close').addEventListener('click',close);
+  lb.addEventListener('click',function(e){if(e.target===lb)close()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden)close()});
+})();
+</script>
+
+</html>
